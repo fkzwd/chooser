@@ -13,6 +13,9 @@ public class Application {
     private static final BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
     public static void main(String[] args) {
+        for (int i = 0; i < 80; i++) {
+            System.out.println();
+        }
         Console.clear();
         String whatWeFinding = readStr("What we finding: ");
         int times = readInt("repeat times");
@@ -28,7 +31,7 @@ public class Application {
         for (int i = 0; i < 25; i++) {
             System.out.print(" ");
         }
-        Chooser.randomString(films, 30, 3, 2, whatWeFinding);
+        Chooser.randomString(films, times, sleepTime, 2, whatWeFinding);
     }
 
     public static int readInt(String forWhat) {
