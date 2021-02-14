@@ -16,22 +16,18 @@ public class Application {
         String sleepTimeStr = System.getProperty("delay");
         String timesStr = System.getProperty("repeat");
         String variantsCountStr = System.getProperty("count");
+        String whatFind = System.getProperty("find");
 
         for (int i = 0; i < 80; i++) {
             System.out.println();
         }
         Console.clear();
-        String whatWeFinding = readStr("What we finding: ");
+        String whatWeFinding = whatFind == null ? readStr("What we finding: ") : whatFind;
 
         int times;
         int sleepTime;
-        if (sleepTimeStr == null && timesStr == null) {
-            times = readInt("repeat times");
-            sleepTime = readInt("sleep time");
-        } else {
-            times = Integer.parseInt(timesStr);
-            sleepTime = Integer.parseInt(sleepTimeStr);
-        }
+        sleepTime = sleepTimeStr == null ? readInt("sleep time") : Integer.parseInt(sleepTimeStr);
+        times = timesStr == null ? readInt("repeat times") : Integer.parseInt(timesStr);
 
         int variantsCount;
         if (variantsCountStr == null) {
