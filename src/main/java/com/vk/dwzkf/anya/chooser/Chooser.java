@@ -62,7 +62,7 @@ public class Chooser {
         if (maxPlus == 0) {
             return start;
         }
-        return (Math.abs(random.nextInt()) % maxPlus + 1) + start;
+        return (Math.abs(random.nextInt()) % (maxPlus + 1)) + start;
     }
 
     private static void sleep(int time) {
